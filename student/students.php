@@ -30,11 +30,11 @@ if($_SESSION['name']!='oasis')
 
 
 </head>
-<body>
+<body class="bg" style="color:white;">
 
 <header>
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="textx  ">Systeme de gestion d'absences HEM</h1>
   <div class="navbar">
   <a href="index.php" style="text-decoration:none;">Accueil</a>
   <a href="students.php" style="text-decoration:none;">Etudiants</a>
@@ -63,12 +63,12 @@ if($_SESSION['name']!='oasis')
             </div>
 
       </div>
-      <input type="submit" class="btn btn-danger col-md-3 col-md-offset-7" style="border-radius:0%" value="Rechercher" name="sr_btn" />
+      <input type="submit" class="btn  col-md-3 col-md-offset-7" style="border-radius:5%;background-color:black;color:white;" value="Rechercher" name="sr_btn" />
       
    </form>
 
    <div class="content"></div>
-    <table class="table table-striped">
+    <table class="table table-primary">
       
       <thead>
       <tr>

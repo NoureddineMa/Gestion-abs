@@ -85,12 +85,12 @@ catch(Exception $e){
 
 
 <!-- body started -->
-<body>
+<body class="bg" style="color:white;">
 
 <!-- Menus started-->
 <header>
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="text text-center">Systeme de gestion d'absences HEM</h1>
   <div class="navbar">
   <a href="index.php" style="text-decoration:none;">Accueil</a>
   <a href="students.php" style="text-decoration:none;">Etudiants</a>
@@ -136,7 +136,7 @@ catch(Exception $e){
                   <input type="text" name="sr_id"  class="form-control" id="input1" placeholder="Entrez votre numero etudiant" />
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary col-md-3 col-md-offset-7" value="Go!" name="sr_btn" />
+            <input type="submit" class="btn col-md-3 col-md-offset-7" style="border-radius:5%;background-color:black;color:white;" value="Go!" name="sr_btn" />
           </form>
           <div class="content"></div>
 
@@ -193,7 +193,7 @@ catch(Exception $e){
           <tr><td></td></tr>
           <tr>
                 <td></td>
-                <td><input type="submit" class="btn btn-primary col-md-3 col-md-offset-7" value="Update" name="Soumettre" /></td>
+                <td><input type="submit"  style="border-radius:5%;background-color:black;color:white;" class="btn col-md-3 col-md-offset-7" value="Update" name="Soumettre" /></td>
                 
           </tr>
 

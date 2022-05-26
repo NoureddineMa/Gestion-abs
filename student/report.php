@@ -33,12 +33,12 @@ if($_SESSION['name']!='oasis')
 <!-- head ended -->
 
 <!-- body started -->
-<body>
+<body class="bg" style="color:white;">
 
 <!-- Menus started-->
 <header>
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="text text-center">Systeme de gestion d'absences HEM</h1>
   <div class="navbar">
   <a href="index.php" style="text-decoration:none;">Accueil</a>
   <a href="students.php" style="text-decoration:none;">Etudiants</a>
@@ -64,8 +64,8 @@ if($_SESSION['name']!='oasis')
   <div class="form-group">
 
     <label  for="input1" class="col-sm-3 control-label">Choisir la matiere</label>
-      <div class="col-sm-4">
-      <select name="whichcourse" id="input1">
+      <div class="col-sm-4" style="    color: black;" >
+      <select name="whichcourse"  id="input1">
          <option  value="algo">Programmation web</option>
          <option  value="algolab">Rcherche operationnelle</option>
         <option  value="dbms">Droit</option>
@@ -84,7 +84,7 @@ if($_SESSION['name']!='oasis')
                   <input type="text" name="sr_id"  class="form-control" id="input1" placeholder="enter your reg. no." />
               </div>
         </div>
-        <input type="submit" class="btn btn-danger col-md-3 col-md-offset-7" style="border-radius:0%" value="Rechercher" name="sr_btn" />
+        <input type="submit" class="btn  col-md-3 col-md-offset-7" style="border-radius:5%;background-color:black;color:white;" value="Rechercher" name="sr_btn" />
     </form>
 
     <div class="content"><br></div>
@@ -107,15 +107,15 @@ if($_SESSION['name']!='oasis')
      //query for searching respective ID
     //  $all_query = mysql_query("select * from reports where reports.st_id='$sr_id' and reports.course = '$course'");
     //  $count_tot = mysql_num_rows($all_query);
-     $all_query = mysql_query("select stat_id,count(*) as countP from attendance where attendance.stat_id='$sr_id' and attendance.course = '$course' and attendance.st_status='Present'");
-     $singleT= mysql_query("select count(*) as countT from attendance where attendance.stat_id='$sr_id' and attendance.course = '$course'");
+     $all_query = mysqli_query($conn,"select stat_id,count(*) as countP from attendance where attendance.stat_id='$sr_id' and attendance.course = '$course' and attendance.st_status='Present'");
+     $singleT= mysqli_query($conn,"select count(*) as countT from attendance where attendance.stat_id='$sr_id' and attendance.course = '$course'");
      $count_tot;
-     if ($row=mysql_fetch_row($singleT))
+     if ($row=mysqli_fetch_row($singleT))
      {
      $count_tot=$row[0];
      }
 
-     while ($data = mysql_fetch_array($all_query)) {
+     while ($data = mysqli_fetch_array($all_query)) {
        $i++;
       //  if($data['st_status'] == "Present"){
       //     $count_pre++;

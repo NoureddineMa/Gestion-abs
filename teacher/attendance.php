@@ -23,7 +23,7 @@ if($_SESSION['name']!='oasis')
         $dp = date('Y-m-d');
         $course = $_POST['whichcourse'];
         
-        $stat = mysql_query("insert into attendance(stat_id,course,st_status,stat_date) values('$stat_id','$course','$st_status','$dp')");
+        $stat = mysqli_query($conn,"insert into attendance(stat_id,course,st_status,stat_date) values('$stat_id','$course','$st_status','$dp')");
         
         $att_msg = "Attendance Recorded.";
 
@@ -33,7 +33,7 @@ if($_SESSION['name']!='oasis')
 
     }
   }
-  catch(Execption $e){
+  catch(Exception $e){
     $error_msg = $e->$getMessage();
   }
  ?>
@@ -65,7 +65,7 @@ if($_SESSION['name']!='oasis')
 </style>
 
 </head>
-<body>
+<body class="bg" style="color:white;">
 
 <header>
 
@@ -108,7 +108,7 @@ if($_SESSION['name']!='oasis')
                 <input type="text" name="whichbatch" id="input2" placeholder="Entrez la date">
               </div>
                
-     <input type="submit" class="btn btn-danger col-md-2 col-md-offset-5" style="border-radius:0%" value="Rechercher" name="batch" />
+     <input type="submit"  style="border-radius:5%;background-color:black;color:white;" class="btn col-md-2 col-md-offset-5" style="border-radius:0%" value="Rechercher" name="batch" />
 
     </form>
 
@@ -130,7 +130,7 @@ if($_SESSION['name']!='oasis')
 
       </div>
 
-    <table class="table table-stripped">
+    <table class="table bg-primary">
       <thead>
         <tr>
           <th scope="col">numero etudiant.</th>
@@ -149,9 +149,9 @@ if($_SESSION['name']!='oasis')
      $i=0;
      $radio = 0;
      $batch = $_POST['whichbatch'];
-     $all_query = mysql_query("select * from students where students.st_batch = '$batch' order by st_id asc");
+     $all_query = mysqli_query($conn,"select * from students where students.st_batch = '$batch' order by st_id asc");
 
-     while ($data = mysql_fetch_array($all_query)) {
+     while ($data = mysqli_fetch_array($all_query)) {
        $i++;
      ?>
   <body>
@@ -180,7 +180,7 @@ if($_SESSION['name']!='oasis')
     </table>
 
     <center><br>
-    <input type="submit" class="btn btn-primary col-md-2 col-md-offset-10" value="Enregistrer" name="att" />
+    <input type="submit"  style="border-radius:5%;background-color:black;color:white;" class="btn  col-md-2 col-md-offset-10" value="Enregistrer" name="att" />
   </center>
 
 </form>

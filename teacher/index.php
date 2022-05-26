@@ -17,11 +17,11 @@ if($_SESSION['name']!='oasis')
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 
 </head>
-<body>
+<body class="bg" style="color:white;">
 
 <header>
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="">Systeme de gestion d'absences HEM</h1>
   <div class="navbar">
   <a href="index.php" style="text-decoration:none;">Accueil</a>
   <a href="students.php" style="text-decoration:none;">Etudiants</a>

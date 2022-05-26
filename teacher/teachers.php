@@ -31,7 +31,7 @@ if($_SESSION['name']!='oasis')
 </style>
 
 </head>
-<body>
+<body class="bg" style="color:white;">
 
 <header>
 
@@ -55,7 +55,7 @@ if($_SESSION['name']!='oasis')
   <div class="content">
     <h3>Liste de professeurs</h3>
     
-    <table class="table table=stripped">
+    <table class="table bg-primary">
         <thead>  
           <tr>
             <th scope="col">Numero du professeur</th>
@@ -69,8 +69,8 @@ if($_SESSION['name']!='oasis')
       <?php
 
         $i=0;
-        $tcr_query = mysql_query("select * from teachers order by tc_id asc");
-        while($tcr_data = mysql_fetch_array($tcr_query)){
+        $tcr_query = mysqli_query($conn,'select * from teachers order by tc_id asc');
+        while($tcr_data = mysqli_fetch_array($tcr_query)){
           $i++;
 
         ?>

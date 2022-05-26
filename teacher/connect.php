@@ -1,6 +1,6 @@
 <?php
 
-$link = @mysql_connect('localhost','root','') or die('Cannot connect to server');
-$link= @mysql_select_db('attmgsystem') or die ('Cannot found database');
+$conn = @mysqli_connect('localhost','root','maher_db') or die('Cannot connect to server');
+$link= @mysqli_select_db($conn,'attmgsystem') or die ('Cannot found database');
 
 ?>

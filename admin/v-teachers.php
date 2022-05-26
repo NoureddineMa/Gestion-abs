@@ -44,7 +44,7 @@ include('connect.php');
                   }
 
         //insertion of data to database table admininfo
-        $result = mysql_query("insert into admininfo(username,password,email,fname,phone,type) values('$_POST[uname]','$_POST[pass]','$_POST[email]','$_POST[fname]','$_POST[phone]','$_POST[type]')");
+        $result = mysqli_query($conn,"insert into admininfo(username,password,email,fname,phone,type) values('$_POST[uname]','$_POST[pass]','$_POST[email]','$_POST[fname]','$_POST[phone]','$_POST[type]')");
         $success_msg="Signup Successfully!";
 
   
@@ -80,12 +80,12 @@ include('connect.php');
 <!-- head ended -->
 
 <!-- body started -->
-<body>
+<body class="bg" style="color:white;">
 
     <!-- Menus started-->
     <header>
 
-      <h1>Systeme de gestion des absences HEM</h1>
+      <h1 class="text-center text-white">Systeme de gestion des absences HEM</h1>
       <div class="navbar">
         <a href="signup.php" style="text-decoration:none;">Creer utilisateurs</a>
         <a href="index.php" style="text-decoration:none;">Ajouter professeur/etudiant</a>
@@ -104,7 +104,7 @@ include('connect.php');
 
   <div class="row">
    
-  <table class="table table=stripped table-hover">
+  <table class="table bg-primary">
         <thead>  
           <tr>
             <th scope="col">numero de professeur</th>
@@ -118,8 +118,8 @@ include('connect.php');
       <?php
 
         $i=0;
-        $tcr_query = mysql_query("select * from teachers order by tc_id asc");
-        while($tcr_data = mysql_fetch_array($tcr_query)){
+        $tcr_query = mysqli_query($conn,"select * from teachers order by tc_id asc");
+        while($tcr_data = mysqli_fetch_array($tcr_query)){
           $i++;
 
         ?>

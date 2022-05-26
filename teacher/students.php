@@ -30,7 +30,7 @@ if($_SESSION['name']!='oasis')
 </style>
 
 </head>
-<body>
+<body class="bg" style="color:white;">
 
 <header>
 
@@ -58,10 +58,10 @@ if($_SESSION['name']!='oasis')
     <form method="post" action="">
       <label>Annee</label>
       <input type="text" name="sr_batch">
-      <input type="submit" name="sr_btn" class="btn btn-danger" style="border-radius:0%" value="Rechercher" >
+      <input type="submit" name="sr_btn"  style="border-radius:5%;background-color:black;color:white;" class="btn" style="border-radius:0%" value="Rechercher" >
     </form>
     <br>
-    <table class="table table-stripped table-hover">
+    <table class="table bg-primary">
       <thead>
         <tr>
           <th scope="col">Numero d'etudiant.</th>
@@ -80,9 +80,9 @@ if($_SESSION['name']!='oasis')
      $srbatch = $_POST['sr_batch'];
      $i=0;
      
-     $all_query = mysql_query("select * from students where students.st_batch = '$srbatch' order by st_id asc ");
+     $all_query = mysqli_query($conn,"select * from students where students.st_batch = '$srbatch' order by st_id asc ");
      
-     while ($data = mysql_fetch_array($all_query)) {
+     while ($data = mysqli_fetch_array($all_query)) {
        $i++;
      
      ?>

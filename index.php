@@ -80,15 +80,15 @@ if(isset($_POST['login']))
 <body class="bg"  style =>
 
        
-	<center> 
+	<center style="margin-top: 167px;"> 
 
-<header>
+<header class="mt-5">
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="text">Systeme de gestion d'absences HEM</h1>
 
 </header>
 
-<h3>Page de connexion</h3>
+<h3 class="text">Page de connexion</h3>
 
 <?php
 //printing error message
@@ -135,14 +135,14 @@ if(isset($error_msg))
 
 		<form method="post" class="form-horizontal col-md-6 col-md-offset-3">
 			<div class="form-group">
-			    <label for="input1" class="col-sm-3 control-label">Id utilisateur</label>
+			    <label for="input1" class="col-sm-3 control-label text">Id utilisateur</label>
 			    <div class="col-sm-7">
 			      <input type="text" name="username"  class="form-control" id="input1" placeholder="ton id" />
 			    </div>
 			</div>
 
 			<div class="form-group">
-			    <label for="input1" class="col-sm-3 control-label">mot de passe</label>
+			    <label for="input1" class="col-sm-3 control-label text">mot de passe</label>
 			    <div class="col-sm-7">
 			      <input type="password" name="password"  class="form-control" id="input1" placeholder="ton mot de pase" />
 			    </div>
@@ -150,28 +150,28 @@ if(isset($error_msg))
 
 
 			<div class="form-group" class="radio">
-			<label for="input1" class="col-sm-3 control-label">Se connecter comme:</label>
+			<label for="input1" class="col-sm-3 control-label text">Se connecter comme:</label>
 			<div class="col-sm-6">
-			  <label>
-			    <input type="radio" name="type" id="optionsRadios1" value="student" checked> Etudiant
+			  <label  class="text" >
+			    <input type="radio" name="type" id="optionsRadios1" value="student" " checked> Etudiant
 			  </label>
-			  	  <label>
-			    <input type="radio" name="type" id="optionsRadios1" value="teacher"> Professeur
+			  	  <label  class="text">
+			    <input type="radio" name="type" id="optionsRadios1" value="teacher" "> Professeur
 			  </label>
-			  <label>
+			  <label  class="text">
 			    <input type="radio" name="type" id="optionsRadios1" value="admin"> Direction / Staff
 			  </label>
 			</div>
 			</div>
 
 
-			<input type="submit" class="btn btn-success col-md-3 col-md-offset-7" style="border-radius:0%" value="Se connecter" name="login" />
+			<input type="submit" class="btn   col-md-3 col-md-offset-7 mar" style="border-radius:5%;background-color:black;color:white;" value="Se connecter" name="login" />
 		</form>
 	</div>
 </div>
 
-<p><strong><a href="reset.php" style="text-decoration:none;">Mot de passe oublie</a></strong></p>
-<p><strong><a href="signup.php" style="text-decoration:none;">Creer un nouveau compte</a></strong></p>
+<p><strong><a href="reset.php" style="color: #FFE69A !important;">Mot de passe oublie</a></strong></p>
+<p><strong><a href="signup.php" style="color:#FFE69A !important;">Creer un nouveau compte</a></strong></p>
 
 </center>
 </body>

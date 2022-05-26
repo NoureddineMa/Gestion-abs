@@ -22,12 +22,12 @@ if($_SESSION['name']!='oasis')
 <!-- head ended -->
 
 <!-- body started -->
-<body>
+<body class="bg">
 
 <!-- Menus started-->
 <header>
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="text  text-center">Systeme de gestion d'absences HEM</h1>
   <div class="navbar">
   <a href="index.php" style="text-decoration:none;">Accueil</a>
   <a href="students.php" style="text-decoration:none;">Etudiant</a>

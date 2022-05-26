@@ -31,7 +31,7 @@ include('connect.php');
            throw new Exception("Username cann't be empty.");
         }
 
-        $result = mysql_query("insert into admininfo(username,password,email,fname,phone,type) values('$_POST[uname]','$_POST[pass]','$_POST[email]','$_POST[fname]','$_POST[phone]','$_POST[type]')");
+        $result = mysqli_query($conn,"insert into admininfo(username,password,email,fname,phone,type) values('$_POST[uname]','$_POST[pass]','$_POST[email]','$_POST[fname]','$_POST[phone]','$_POST[type]')");
         $success_msg="Signup Successfully!";
 
   
@@ -61,15 +61,15 @@ include('connect.php');
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="bg">
 
 <header>
 
-  <h1>Systeme de gestion d'absences HEM</h1>
+  <h1 class="text-center  text">Systeme de gestion d'absences HEM</h1>
 
 </header>
 <center>
-<h1>S'enregistrer</h1>
+<h1 class="text">S'enregistrer</h1>
 <div class="content">
 
   <div class="row">
@@ -126,35 +126,35 @@ include('connect.php');
     <form method="post" class="form-horizontal col-md-6 col-md-offset-3">
 
     <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Nom complet</label>
+          <label for="input1" class="col-sm-3 control-label text">Nom complet</label>
           <div class="col-sm-7">
             <input type="text" name="fname"  class="form-control" id="input1" placeholder="Fullname" required/>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">numero de telephone</label>
+          <label for="input1" class="col-sm-3 control-label text">numero de telephone</label>
           <div class="col-sm-7">
             <input type="number" name="phone"  class="form-control" id="input1" placeholder="Phone Number" required/>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">Email</label>
+          <label for="input1" class="col-sm-3 control-label text">Email</label>
           <div class="col-sm-7">
             <input type="email" name="email"  class="form-control" id="input1" placeholder="Your Email" required/>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">id</label>
+          <label for="input1" class="col-sm-3 control-label text">id</label>
           <div class="col-sm-7">
             <input type="text" name="uname"  class="form-control" id="input1" placeholder="Choose Username" required/>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="input1" class="col-sm-3 control-label">mot de passe</label>
+          <label for="input1" class="col-sm-3 control-label text">mot de passe</label>
           <div class="col-sm-7">
             <input type="password" name="pass"  class="form-control" id="input1" placeholder="Enter Password" required/>
           </div>
@@ -162,25 +162,25 @@ include('connect.php');
 
 
       <div class="form-group" class="radio">
-      <label for="input1" class="col-sm-3 control-label">role dans HEM:</label>
+      <label for="input1" class="col-sm-3 control-label text">role dans HEM:</label>
       <div class="col-sm-7">
-        <label>
-          <input type="radio" name="type" id="optionsRadios1" value="student" checked> Etudiant
+        <label class="text">
+          <input type="radio" name="type" id="optionsRadios1"   value="student" checked> Etudiant
         </label>
-            <label>
+            <label class="text">
           <input type="radio" name="type" id="optionsRadios1" value="teacher"> Professeur
         </label>
-        <label>
+        <label class="text">
           <input type="radio" name="type" id="optionsRadios1" value="admin"> Admin
         </label>
       </div>
       </div>
 
-      <input type="submit" style="border-radius:0%" class="btn btn-primary col-md-2 col-md-offset-8" value="Signup" name="signup" />
+      <input type="submit" style="border-radius:5%;background-color:black;color:white;" class="btn  col-md-2 col-md-offset-8" value="Signup" name="signup" />
     </form>
   </div>
     <br>
-    <p><strong>vous avez deja un? <a href="index.php">Se connecter</a> ici.</strong></p>
+    <p style="color: #FFE69A !important;"><strong>vous avez deja un membre? <a href="index.php" style="color:white !important;">Se connecter</a> ici.</strong></p>
 
 </div>
 

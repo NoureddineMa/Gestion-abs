@@ -44,7 +44,7 @@ include('connect.php');
                   }
 
         //insertion of data to database table admininfo
-        $result = mysql_query("insert into admininfo(username,password,email,fname,phone,type) values('$_POST[uname]','$_POST[pass]','$_POST[email]','$_POST[fname]','$_POST[phone]','$_POST[type]')");
+        $result = mysqli_query($conn,"insert into admininfo(username,password,email,fname,phone,type) values('$_POST[uname]','$_POST[pass]','$_POST[email]','$_POST[fname]','$_POST[phone]','$_POST[type]')");
         $success_msg="Signup Successfully!";
 
   
@@ -80,7 +80,7 @@ include('connect.php');
 <!-- head ended -->
 
 <!-- body started -->
-<body>
+<body class="bg" style="color:white;">
 
     <!-- Menus started-->
     <header>
@@ -163,7 +163,7 @@ include('connect.php');
       </div>
       </div>
 
-      <input type="submit" class="btn btn-primary col-md-2 col-md-offset-8" value="Signup" name="signup" />
+      <input type="submit" style="border-radius:5%;background-color:black;color:white;" class="btn  col-md-2 col-md-offset-8" value="Signup" name="signup" />
     </form>
   </div>
     

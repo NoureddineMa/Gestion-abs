@@ -80,12 +80,12 @@ include('connect.php');
 <!-- head ended -->
 
 <!-- body started -->
-<body>
+<body class="bg" style="color:black;">
 
     <!-- Menus started-->
     <header>
 
-      <h1>Systeme de gestion des absences HEM</h1>
+      <h1 style ="color:white !important;">Systeme de gestion des absences HEM</h1>
       <div class="navbar">
         <a href="signup.php" style="text-decoration:none;">Creer utilisateurs</a>
         <a href="index.php" style="text-decoration:none;">Ajouter professeur/etudiant</a>
@@ -98,13 +98,13 @@ include('connect.php');
     <!-- Menus ended -->
 
 <center>
-<h1>Tous les etudiants</h1>
+<h1 style ="color:white !important;">Tous les etudiants</h1>
 
 <div class="content">
 
   <div class="row">
    
-    <table class="table table-striped table-hover">
+    <table class="table bg-primary">
       
         <thead>
         <tr>
