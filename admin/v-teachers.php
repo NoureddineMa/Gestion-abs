@@ -88,7 +88,7 @@ include('connect.php');
       <h1 class="text-center text-white">Systeme de gestion des absences HEM</h1>
       <div class="navbar">
         <a href="signup.php" style="text-decoration:none;">Creer utilisateurs</a>
-        <a href="index.php" style="text-decoration:none;">Ajouter professeur/etudiant</a>
+        <a href="index.php" style="text-decoration:none;  margin-left:10px;">Ajouter professeur <br> /etudiant</a>
         <a href="v-students.php" style="text-decoration:none;">voir etudiants</a>
       <a href="v-teachers.php" style="text-decoration:none;">voir professeurs</a>
         <a href="../logout.php" style="text-decoration:none;">Se deconnecter</a>

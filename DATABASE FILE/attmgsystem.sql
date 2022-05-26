@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 10, 2021 at 08:50 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Hôte : 127.0.0.1
+-- Généré le : ven. 27 mai 2022 à 01:14
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `attmgsystem`
+-- Base de données : `attmgsystem`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admininfo`
+-- Structure de la table `admininfo`
 --
 
 CREATE TABLE `admininfo` (
@@ -36,7 +37,7 @@ CREATE TABLE `admininfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admininfo`
+-- Déchargement des données de la table `admininfo`
 --
 
 INSERT INTO `admininfo` (`username`, `password`, `email`, `fname`, `phone`, `type`) VALUES
@@ -48,7 +49,7 @@ INSERT INTO `admininfo` (`username`, `password`, `email`, `fname`, `phone`, `typ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attendance`
+-- Structure de la table `attendance`
 --
 
 CREATE TABLE `attendance` (
@@ -59,7 +60,7 @@ CREATE TABLE `attendance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `attendance`
+-- Déchargement des données de la table `attendance`
 --
 
 INSERT INTO `attendance` (`stat_id`, `course`, `st_status`, `stat_date`) VALUES
@@ -78,7 +79,28 @@ INSERT INTO `attendance` (`stat_id`, `course`, `st_status`, `stat_date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reports`
+-- Structure de la table `jusitif`
+--
+
+CREATE TABLE `jusitif` (
+  `Name` varchar(25) NOT NULL,
+  `Email` int(40) NOT NULL,
+  `Jusitf` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `jusitif`
+--
+
+INSERT INTO `jusitif` (`Name`, `Email`, `Jusitf`) VALUES
+('test', 0, 'test.gif'),
+('j', 0, 'j.gif'),
+('test', 0, 'test.gif');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reports`
 --
 
 CREATE TABLE `reports` (
@@ -93,7 +115,7 @@ CREATE TABLE `reports` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Structure de la table `students`
 --
 
 CREATE TABLE `students` (
@@ -106,7 +128,7 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `students`
+-- Déchargement des données de la table `students`
 --
 
 INSERT INTO `students` (`st_id`, `st_name`, `st_dept`, `st_batch`, `st_sem`, `st_email`) VALUES
@@ -119,7 +141,7 @@ INSERT INTO `students` (`st_id`, `st_name`, `st_dept`, `st_batch`, `st_sem`, `st
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teachers`
+-- Structure de la table `teachers`
 --
 
 CREATE TABLE `teachers` (
@@ -131,7 +153,7 @@ CREATE TABLE `teachers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `teachers`
+-- Déchargement des données de la table `teachers`
 --
 
 INSERT INTO `teachers` (`tc_id`, `tc_name`, `tc_dept`, `tc_email`, `tc_course`) VALUES
@@ -139,48 +161,49 @@ INSERT INTO `teachers` (`tc_id`, `tc_name`, `tc_dept`, `tc_email`, `tc_course`) 
 ('2', 'John Smith', 'MIT', 'smithj@gmail.com', 'Networking');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `admininfo`
+-- Index pour la table `admininfo`
 --
 ALTER TABLE `admininfo`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `attendance`
+-- Index pour la table `attendance`
 --
 ALTER TABLE `attendance`
   ADD KEY `stat_id` (`stat_id`);
 
 --
--- Indexes for table `reports`
+-- Index pour la table `reports`
 --
 ALTER TABLE `reports`
   ADD PRIMARY KEY (`st_id`);
 
 --
--- Indexes for table `students`
+-- Index pour la table `students`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`st_id`);
 
 --
--- Indexes for table `teachers`
+-- Index pour la table `teachers`
 --
 ALTER TABLE `teachers`
   ADD PRIMARY KEY (`tc_id`);
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `attendance`
+-- Contraintes pour la table `attendance`
 --
 ALTER TABLE `attendance`
   ADD CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`stat_id`) REFERENCES `students` (`st_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

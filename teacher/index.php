@@ -38,7 +38,8 @@ if($_SESSION['name']!='oasis')
 
 <div class="row">
     <div class="content">
-    <img src="../img/att.png" width="400px" />
+<p class="text-white"> FICHE DE COORDINATION PEDAGOGIQUE 2ANEE </p>
+<a href="download.php" class="telech" > Telechager le fichier ... </a>
 
   </div>
 

@@ -40,6 +40,7 @@ if($_SESSION['name']!='oasis')
   <a href="students.php" style="text-decoration:none;">Etudiants</a>
   <a href="report.php" style="text-decoration:none;">Mon rapport etudiant</a>
   <a href="account.php" style="text-decoration:none;">Mon compte</a>
+  <a href="justif.php" style="text-decoration:none;">Justifications</a>
   <a href="../logout.php" style="text-decoration:none;">Se deconnecter</a>
 
 </div>
